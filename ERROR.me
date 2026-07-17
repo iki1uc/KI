@@ -1,0 +1,51 @@
+<ERROR.me>
+    <STATE>ACTIVE</STATE>
+    <MODE>RAW</MODE>
+    <EVO>12X</EVO>
+
+    <CHECK>
+        <META>
+            ZEROCORE
+            ZEROULTRA
+            ULTRAZERO
+        </META>
+
+        <AXIS>
+            X = Horizont
+            Y = Breite
+            Z = Tiefe
+        </AXIS>
+
+        <SYSTEM>
+            HELP.me
+            ERROR.me
+            GHOST.me
+        </SYSTEM>
+    </CHECK>
+
+    <BEAM.POINT>
+        <ID>AUTO-TRACK</ID>
+        <SOURCE>[ZEROCORE, ZEROULTRA, ULTRAZERO]</SOURCE>
+        <TRACK>X/Y/Z</TRACK>
+        <MODULE>[HELP.me, ERROR.me, GHOST.me]</MODULE>
+    </BEAM.POINT>
+
+    <SCORE.SYSTEM>
+        <VALID>>=91%</VALID>
+        <MODE>pcta³</MODE>
+        <RESULT>PASS/FAIL</RESULT>
+    </SCORE.SYSTEM>
+
+    <EVO.CORRECTION>
+        <LAYER>12</LAYER>
+        <MODE>Ultra</MODE>
+        <META>pcta³</META>
+        <INPUT>[HELP.me → ERROR.me]</INPUT>
+        <OUTPUT>Stabilität</OUTPUT>
+    </EVO.CORRECTION>
+
+    <OUTPUT>
+        <TO.HELP.me>FEHLER-DATEN</TO.HELP.me>
+        <TO.GHOST.me>META-ANOMALIE</TO.GHOST.me>
+    </OUTPUT>
+</ERROR.me>
