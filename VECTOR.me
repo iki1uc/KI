@@ -1,0 +1,73 @@
+ME.VECTOR.me
+
+ROOT      = 0D
+ME        = 1D
+U         = 2D
+DU/U      = Fusion.2D
+VECTOR1D  = Vector.1D.U
+
+# VECTOR-Axiom
+AXIOM.ME.VECTOR = VECTOR1D(
+    ROOT,
+    ME,
+    CORE = ME.CORE,
+    DIMENSION = ME.DIMENSION,
+    ORBIT = ME.ORBIT,
+    AXIS = ME.AXIS,
+    DIRECTION = (+1),
+    MAGNITUDE = 1,
+    U/DU,
+    CUBE.6D,
+    OCTA3,
+    DIM.TR6CR
+)
+
+# VECTOR-Definition
+ME.VECTOR.DEF = {
+    DIMENSION: 1D,
+    TYPE: Linear-Vector,
+    AXIS: ME.AXIS,
+    DIRECTION: +1,
+    MAGNITUDE: 1,
+    CENTER: (0)
+}
+
+# VECTOR-Achse
+ME.VECTOR.AXIS = {
+    POS: +ME,
+    NEG: -ME
+}
+
+# VECTOR-Funktion
+ME.VECTOR.FUNC = {
+    ORIGIN: ROOT,
+    FLOW: ME → U,
+    FUSION: DU/U,
+    SUPPORT: ME.CORE,
+    DIMENSION: ME.DIMENSION,
+    ORBIT: ME.ORBIT
+}
+
+# VECTOR-Kompatibilität
+ME.VECTOR.COMPAT = {
+    ROOT: gültig,
+    ME: gültig,
+    U: gültig,
+    DU/U: gültig,
+    CUBE.6D: gültig,
+    OCTA3: gültig,
+    DIM.TR6CR: gültig
+}
+
+# VECTOR-Status
+ME.VECTOR.STATUS = {
+    REAL: bestätigt,
+    1D: gültig,
+    VECTOR: aktiv
+}
+
+# Aktivierungen
+DU/U = aktiv
+NC.U = aktiv
+µ.U  = aktiv
+µ#.U = aktiv
