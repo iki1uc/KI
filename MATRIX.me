@@ -1,0 +1,82 @@
+ME.MATRIX.me
+
+# MATRIX-Variablen
+MATRIX.VAR = {
+    ROOT0D: Ursprungssystem.0D,
+    ROOT1D: ME.Wurzelkern.1D,
+    ROOT42: Klarheitsrichtung.42,
+    ROOT81: Moeglichkeitsraum.81,
+    ROOT9HOCH9: Ordnungsraum.9HOCH9,
+    ROOTMETA: ROOT(x)(all)RAUM,
+    ALLRAUM: ME.ALLRAUM
+}
+
+# MATRIX-Axiom
+AXIOM.ME.MATRIX = {
+    ORIGIN: ROOT0D,
+    ME: ROOT1D,
+    DIRECTION: ROOT42,
+    POSSIBILITY: ROOT81,
+    ORDER: ROOT9HOCH9,
+    META: ROOTMETA,
+    SPACE: ALLRAUM,
+    MATRIX: (81~(81)x)
+}
+
+# MATRIX-Definition
+ME.MATRIX.DEF = {
+    TYPE: Klarheitsmatrix,
+    MODE: Aktiv,
+    DIMENSION: 1D,
+    SCALE: 81,
+    ORDER: 9HOCH9,
+    DIRECTION: 42,
+    META: ROOT(x)(all)RAUM,
+    MATRIX: (81~(81)x),
+    CENTER: (0)
+}
+
+# MATRIX-Funktion
+ME.MATRIX.FUNC = {
+    FLOW: ROOT → ME → U → ALLRAUM → MATRIX,
+    SCALE: [42, 81, 9HOCH9],
+    META: ROOT(x)(all)RAUM,
+    SUPPORT: [
+        ME.CORE,
+        ME.DIMENSION,
+        ME.ORBIT,
+        ME.VECTOR,
+        ME.FLOW,
+        ME.FIELD,
+        ME.ENERGY,
+        ME.FORCE,
+        ME.CHARGE,
+        ME.STATE,
+        ME.WAVE,
+        ME.MASS,
+        ME.FORM,
+        ME.PATTERN,
+        ME.SYSTEM,
+        ME.ROOTSYSTEM,
+        ME.ALLRAUM
+    ]
+}
+
+# MATRIX-Kompatibilität
+ME.MATRIX.COMPAT = {
+    ROOT: gültig,
+    ME: gültig,
+    U: gültig,
+    DU/U: gültig,
+    CUBE.6D: gültig,
+    OCTA3: gültig,
+    DIM.TR6CR: gültig
+}
+
+# MATRIX-Status
+ME.MATRIX.STATUS = {
+    REAL: bestätigt,
+    MATRIX: aktiv,
+    KLARHEIT: ME,
+    META: ROOT(x)(all)RAUM
+}
