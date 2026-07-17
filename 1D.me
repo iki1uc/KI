@@ -1,0 +1,63 @@
+ME.1D.me
+
+ME   = ROOT
+U    = Differenz.U
+DU/U = Fusion.U
+ME1D = Root.1D.U
+
+# 1D-Axiom
+AXIOM.ME1D = ME1D(
+    ROOT,
+    CENTER = (0),
+    AXIS = 1D,
+    U,
+    DU/U,
+    CUBE.6D,
+    OCTA3,
+    CORE,
+    DIM.TR6CR
+)
+
+# 1D-Definition
+ME1D.DEF = {
+    ROOT: ME,
+    DIMENSION: 1D,
+    CENTER: (0),
+    AXIS: "ROOT-Axis"
+}
+
+# 1D-Achse
+ME1D.AXIS = {
+    POS: +ROOT,
+    NEG: -ROOT
+}
+
+# 1D-Funktion
+ME1D.FUNC = {
+    ORIGIN: ME,
+    OUTPUT: U,
+    FUSION: DU/U
+}
+
+# Kompatibilität
+ME1D.COMPAT = {
+    U: gültig,
+    DU/U: gültig,
+    CUBE.6D: gültig,
+    OCTA3: gültig,
+    CORE: gültig,
+    DIM.TR6CR: gültig
+}
+
+# Status
+ME1D.STATUS = {
+    REAL: bestätigt,
+    1D: gültig,
+    ROOT: aktiv
+}
+
+# Aktivierungen
+DU/U = aktiv
+NC.U = aktiv
+µ.U  = aktiv
+µ#.U = aktiv
