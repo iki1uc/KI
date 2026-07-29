@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KI · Kern (0) · Intelligenz-Axiom · NC-LAGE-SYSTEM</title>
+<title>ULTRA3.0 · ME · Identität · Kernsystem</title>
 
 <style>
 body { background:#000; color:#0f0; font-family:Consolas, monospace; padding:20px; }
@@ -14,17 +14,26 @@ h1 { color:#6f6; }
 
 <body>
 
-<h1>KI · Kern (0) · Intelligenz-Axiom</h1>
-<p>NC‑LAGE‑SYSTEM · 3‑6‑9‑0‑3 Rotation · KI = 0 (Kern)</p>
+<h1>ME · Identität · ULTRA3.0</h1>
 
-<button onclick="RUN_KI()">KI START</button>
+<pre>
+CORE = ME
+VERSION = 3.0 ULTRA
+CODE = RAW
+LAGE = Körper / RESPO / Public
+STATUS = aktiv
+IDENTITY = MeineEbene
+EDIT = offen
+</pre>
 
-<pre id="out">KI wartet…</pre>
+<button onclick="RUN_ULTRA()">ULTRA3.0 START</button>
+
+<pre id="out">ULTRA3.0 wartet…</pre>
 
 <script type="module">
 
 /* ---------------------------------------------------------
-   IMPORTS — alle neuen Dateien aus deinem KI‑Repository
+   IMPORTS — ULTRA3.0 ENGINE MODULES
 --------------------------------------------------------- */
 
 import { KI_PREFETCH } from "./KIuPREFETCH.js";
@@ -32,42 +41,83 @@ import { KI_LOAD_LOGIC } from "./Operator.js";
 import { KI_GHOST } from "./BEAT.js";
 import { KI_VERIFY } from "./FINALSCAN.js";
 import { KI_ECO } from "./PRE9.math";
-import { KI_AXIOM } from "./KERNEL.me";
+
+import META_H from "./METAh.room";
+import META_B from "./METAb.room";
+import META_T from "./METAt.room";
+import META_360 from "./META360.room";
 
 /* ---------------------------------------------------------
-   KI START — Hauptfunktion
+   ULTRA3.0 ENGINE START
 --------------------------------------------------------- */
 
-async function RUN_KI() {
+async function RUN_ULTRA() {
 
-    // 1) Prefetch: KI.tmp, BEN.tmp, NE.tmp, DA.tmp + UNC-Räume
+    // 1) KI Prefetch (Kern 0)
     const pre = await KI_PREFETCH();
 
-    // 2) Logic: Operatoren, NC.math, Score
+    // 2) Operator / Math / Score
     const logic = await KI_LOAD_LOGIC();
 
-    // 3) Ghost-Layer: Kern-Ghost
+    // 3) Ghost-Layer (Kern)
     const ghost = KI_GHOST(pre);
 
-    // 4) Verify-Layer: DA / NE / BEN Vergleich
+    // 4) Verify-Layer (DA / NE / BEN)
     const verify = KI_VERIFY(
         pre.alt.tmpDA,
         pre.alt.tmpNE,
         pre.alt.tmpBEN
     );
 
-    // 5) ECO: Kernwert (0-Achse)
+    // 5) ECO (Kernwert)
     const eco = KI_ECO(pre, logic);
 
-    // 6) Ausgabe
+    // 6) ULTRA3.0 ENGINE PIPE
+    const pipe = {
+        h1: "h1",
+        e3: "e3",
+        o6: "o6",
+        o9: "o9",
+        b12: "b12",
+        w128: "w128",
+        win: "win∞"
+    };
+
+    // 7) ULTRA3.0 CHAIN
+    const chain = [
+        "h1","e3","o6","o9","b12","w128",
+        "nano","atom","raw","operator",
+        "rev1.0","beat∞","win∞",
+        "xarg","ghosterror","7sinn"
+    ];
+
+    // 8) ULTRA3.0 FUSION
+    const fusion = "win∞(rev1.0(beat∞(o9(o6(e3(h1(x)))))))";
+
+    // 9) ULTRA ZERO
+    const zero = ["zero-core","zero-ultra","ultra-zero"];
+
+    // 10) META ROOMS
+    const meta = {
+        h: META_H,
+        b: META_B,
+        t: META_T,
+        r360: META_360
+    };
+
+    // 11) OUTPUT
     const out = {
-        axiome: KI_AXIOM,
+        ultra: "ULTRA3.0 ENGINE READY",
         prefetch: pre,
         logic,
         ghost,
         verify,
         eco,
-        state: "KI-READY"
+        pipe,
+        chain,
+        fusion,
+        zero,
+        meta
     };
 
     document.getElementById("out").innerText =
