@@ -1,56 +1,80 @@
-<!DOCTYPE ULTRA3.0>
-<ULTRA3.0.ENGINE>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>KI · Kern (0) · Intelligenz-Axiom · NC-LAGE-SYSTEM</title>
 
-    <STATE>ACTIVE</STATE>
-    <MODE>AUTO</MODE>
-    <VERSION>3.0 TRUE FULL</VERSION>
+<style>
+body { background:#000; color:#0f0; font-family:Consolas, monospace; padding:20px; }
+pre { background:#111; padding:10px; border-left:3px solid #0f0; }
+button { background:#0f0; color:#000; padding:10px 20px; border:none; cursor:pointer; }
+h1 { color:#6f6; }
+</style>
+</head>
 
-    <CORE>o_meta(x)</CORE>
-    <PIPE>h1 → e3 → o6 → o9 → b12 → w128 → win∞</PIPE>
+<body>
 
-    <AXIS>X Y Z U V W</AXIS>
-    <VECTOR>horizont breite tiefe ultra wert</VECTOR>
+<h1>KI · Kern (0) · Intelligenz-Axiom</h1>
+<p>NC‑LAGE‑SYSTEM · 3‑6‑9‑0‑3 Rotation · KI = 0 (Kern)</p>
 
-    <CHAIN>
-        h1 + e3 + o6 + o9 + b12 + w128 +
-        nano + atom + raw + operator +
-        rev1.0 + beat∞ + win∞ +
-        xarg + ghosterror + 7sinn
-    </CHAIN>
+<button onclick="RUN_KI()">KI START</button>
 
-    <FUSION>
-        win∞(rev1.0(beat∞(o9(o6(e3(h1(x)))))))
-    </FUSION>
+<pre id="out">KI wartet…</pre>
 
-    <ZERO>
-        zero-core
-        zero-ultra
-        ultra-zero
-    </ZERO>
+<script type="module">
 
-    <HTML.MATRIX>
-        1.html 3.html 6.html 9.html 12.html
-        RAUM³.html 698869.html gitter.html cluster.html
-    </HTML.MATRIX>
+/* ---------------------------------------------------------
+   IMPORTS — alle neuen Dateien aus deinem KI‑Repository
+--------------------------------------------------------- */
 
-    <OCTA3>
-        server web net script js html css dom
-    </OCTA3>
+import { KI_PREFETCH } from "./KIuPREFETCH.js";
+import { KI_LOAD_LOGIC } from "./Operator.js";
+import { KI_GHOST } from "./BEAT.js";
+import { KI_VERIFY } from "./FINALSCAN.js";
+import { KI_ECO } from "./PRE9.math";
+import { KI_AXIOM } from "./KERNEL.me";
 
-    <HELP>
-        help.me error.me ghost.me
-    </HELP>
+/* ---------------------------------------------------------
+   KI START — Hauptfunktion
+--------------------------------------------------------- */
 
-    <PCTA3>24X</PCTA3>
-    <RECALL>>=91%</RECALL>
+async function RUN_KI() {
 
-    <META.ROOMS>
-        <FILE>[METAh.room](ca://s?q=Open_METAh_room)</FILE>
-        <FILE>[METAb.room](ca://s?q=Open_METAb_room)</FILE>
-        <FILE>[METAt.room](ca://s?q=Open_METAt_room)</FILE>
-        <FILE>[META360.room](ca://s?q=Open_META360_room)</FILE>
-        <FILE>[META2.html](ca://s?q=Open_META2_html)</FILE>
-        <FILE>[META3.html](ca://s?q=Open_META3_html)</FILE>
-    </META.ROOMS>
+    // 1) Prefetch: KI.tmp, BEN.tmp, NE.tmp, DA.tmp + UNC-Räume
+    const pre = await KI_PREFETCH();
 
-</ULTRA3.0.ENGINE>
+    // 2) Logic: Operatoren, NC.math, Score
+    const logic = await KI_LOAD_LOGIC();
+
+    // 3) Ghost-Layer: Kern-Ghost
+    const ghost = KI_GHOST(pre);
+
+    // 4) Verify-Layer: DA / NE / BEN Vergleich
+    const verify = KI_VERIFY(
+        pre.alt.tmpDA,
+        pre.alt.tmpNE,
+        pre.alt.tmpBEN
+    );
+
+    // 5) ECO: Kernwert (0-Achse)
+    const eco = KI_ECO(pre, logic);
+
+    // 6) Ausgabe
+    const out = {
+        axiome: KI_AXIOM,
+        prefetch: pre,
+        logic,
+        ghost,
+        verify,
+        eco,
+        state: "KI-READY"
+    };
+
+    document.getElementById("out").innerText =
+        JSON.stringify(out, null, 2);
+}
+
+</script>
+
+</body>
+</html>
