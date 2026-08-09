@@ -1,40 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>ULTRA3.0 · ME · Identität · Kernsystem</title>
+<title>KI · ULTRA3‑RDY · AI‑KATALOG · iki1uc</title>
 
 <style>
-body { background:#000; color:#0f0; font-family:Consolas, monospace; padding:20px; }
-pre { background:#111; padding:10px; border-left:3px solid #0f0; }
-button { background:#0f0; color:#000; padding:10px 20px; border:none; cursor:pointer; }
-h1 { color:#6f6; }
+body { background:#000; color:#0f0; font-family:Consolas, monospace; padding:30px; }
+h1 { color:#0ff; text-shadow:0 0 12px #0ff; text-align:center; margin-bottom:30px; }
+
+.block {
+    background:#111;
+    border-left:4px solid #0ff;
+    padding:20px;
+    margin-bottom:30px;
+    border-radius:8px;
+}
+
+.title {
+    font-size:22px;
+    color:#6cf;
+    margin-bottom:10px;
+}
+
+pre {
+    background:#000;
+    padding:15px;
+    border-left:3px solid #6cf;
+    white-space:pre-wrap;
+}
+
+a {
+    color:#0ff;
+    font-size:18px;
+    display:block;
+    margin:6px 0;
+    text-decoration:none;
+}
+a:hover { color:#9ef; }
 </style>
-</head>
-
-<body>
-
-<h1>ME · Identität · ULTRA3.0</h1>
-
-<pre>
-CORE = ME
-VERSION = 3.0 ULTRA
-CODE = RAW
-LAGE = Körper / RESPO / Public
-STATUS = aktiv
-IDENTITY = MeineEbene
-EDIT = offen
-</pre>
-
-<button onclick="RUN_ULTRA()">ULTRA3.0 START</button>
-
-<pre id="out">ULTRA3.0 wartet…</pre>
 
 <script type="module">
-
-/* ---------------------------------------------------------
-   IMPORTS — ULTRA3.0 ENGINE MODULES
---------------------------------------------------------- */
 
 import { KI_PREFETCH } from "./KIuPREFETCH.js";
 import { KI_LOAD_LOGIC } from "./Operator.js";
@@ -42,89 +47,96 @@ import { KI_GHOST } from "./BEAT.js";
 import { KI_VERIFY } from "./FINALSCAN.js";
 import { KI_ECO } from "./PRE9.math";
 
-import META_H from "./METAh.room";
-import META_B from "./METAb.room";
-import META_T from "./METAt.room";
-import META_360 from "./META360.room";
+import META_H from "./UNC.room";
+import META_6U from "./UNC6U.room";
+import META_9U from "./UNC9.room";
 
-/* ---------------------------------------------------------
-   ULTRA3.0 ENGINE START
---------------------------------------------------------- */
+let f = 0;
 
-async function RUN_ULTRA() {
-
-    // 1) KI Prefetch (Kern 0)
-    const pre = await KI_PREFETCH();
-
-    // 2) Operator / Math / Score
-    const logic = await KI_LOAD_LOGIC();
-
-    // 3) Ghost-Layer (Kern)
-    const ghost = KI_GHOST(pre);
-
-    // 4) Verify-Layer (DA / NE / BEN)
-    const verify = KI_VERIFY(
-        pre.alt.tmpDA,
-        pre.alt.tmpNE,
-        pre.alt.tmpBEN
-    );
-
-    // 5) ECO (Kernwert)
-    const eco = KI_ECO(pre, logic);
-
-    // 6) ULTRA3.0 ENGINE PIPE
-    const pipe = {
-        h1: "h1",
-        e3: "e3",
-        o6: "o6",
-        o9: "o9",
-        b12: "b12",
-        w128: "w128",
-        win: "win∞"
-    };
-
-    // 7) ULTRA3.0 CHAIN
-    const chain = [
-        "h1","e3","o6","o9","b12","w128",
-        "nano","atom","raw","operator",
-        "rev1.0","beat∞","win∞",
-        "xarg","ghosterror","7sinn"
-    ];
-
-    // 8) ULTRA3.0 FUSION
-    const fusion = "win∞(rev1.0(beat∞(o9(o6(e3(h1(x)))))))";
-
-    // 9) ULTRA ZERO
-    const zero = ["zero-core","zero-ultra","ultra-zero"];
-
-    // 10) META ROOMS
-    const meta = {
-        h: META_H,
-        b: META_B,
-        t: META_T,
-        r360: META_360
-    };
-
-    // 11) OUTPUT
-    const out = {
-        ultra: "ULTRA3.0 ENGINE READY",
-        prefetch: pre,
-        logic,
-        ghost,
-        verify,
-        eco,
-        pipe,
-        chain,
-        fusion,
-        zero,
-        meta
-    };
-
-    document.getElementById("out").innerText =
-        JSON.stringify(out, null, 2);
+/* PANEL: KI‑SYSTEM */
+function panelSystem(){
+return `
+KI · ULTRA3‑RDY · RESPO327
+Systemstatus:
+KI‑CORE aktiv
+RESPO‑327 aktiv
+ULTRA3‑Engine verbunden
+GEO‑Engine aktiv
+ROOM‑Engine aktiv
+OPERATOR aktiv
+SCAN aktiv
+Frame: ${f}
+`;
 }
+
+/* PANEL: ASCII‑GEO */
+function panelGeo(){
+const d = ["●","○","·","∙","•"];
+const p = (i)=> d[(f+i)%d.length];
+return `
+ASCII‑GEO (frame ${f})
+X ─── ${p(1)} ${p(2)} ${p(3)}
+Y ─── ${p(2)} ${p(3)} ${p(4)}
+Z ─── ${p(3)} ${p(4)} ${p(5)}
+ROTATION: ${" ".repeat(f%12)}↻
+`;
+}
+
+/* PANEL: WARP */
+function panelWarp(){
+return `
+WARP‑TUNNEL
+Depth: ${"●".repeat((f%6)+3)}
+Warp : ${"~".repeat((f%10)+5)}
+`;
+}
+
+/* PANEL: AI‑KATALOG */
+function panelKatalog(){
+return `
+AI‑KATALOG
+ORT  – Zielpunkt
+HOME – Ruhepunkt
+WORK – Arbeitspunkt
+OHH  – Überlastpunkt
+FREE – Freiraum
+AI   – Respo‑Punkt
+SOLL – Absichtspunkt
+
+Operable Optionen:
+→ To‑Do‑Matrix
+→ Raum‑Navigation
+→ KI‑Antwortpunkt
+→ ULTRA3‑ASCII‑Panels
+→ GEO‑Engine‑Mapping
+→ ROOM‑Engine‑Routing
+`;
+}
+
+/* MAIN LOOP */
+setInterval(()=>{
+    f++;
+
+    document.getElementById("sys").textContent = panelSystem();
+    document.getElementById("geo").textContent = panelGeo();
+    document.getElementById("warp").textContent = panelWarp();
+    document.getElementById("katalog").textContent = panelKatalog();
+
+}, 150);
 
 </script>
 
-</body>
-</html>
+</head>
+
+<body>
+
+<h1>KI · ULTRA3‑RDY · AI‑KATALOG</h1>
+
+<div class="block"><div class="title">KI‑SYSTEM</div><pre id="sys"></pre></div>
+<div class="block"><div class="title">ASCII‑GEO</div><pre id="geo"></pre></div>
+<div class="block"><div class="title">WARP‑TUNNEL</div><pre id="warp"></pre></div>
+<div class="block"><div class="title">AI‑KATALOG</div><pre id="katalog"></pre></div>
+
+<div class="block">
+    <div class="title">Module</div>
+    <a href="./ID.html">
