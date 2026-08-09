@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>KI · ULTRA3‑RDY · AI‑KATALOG · iki1uc</title>
+<title>KI · RESPO‑327 · EVO · TIME‑ISOLATED</title>
 
 <style>
 body { background:#000; color:#0f0; font-family:Consolas, monospace; padding:30px; }
@@ -28,73 +28,56 @@ pre {
     border-left:3px solid #6cf;
     white-space:pre-wrap;
 }
-
-a {
-    color:#0ff;
-    font-size:18px;
-    display:block;
-    margin:6px 0;
-    text-decoration:none;
-}
-a:hover { color:#9ef; }
 </style>
 
 <script type="module">
 
-import { KI_PREFETCH } from "./KIuPREFETCH.js";
-import { KI_LOAD_LOGIC } from "./Operator.js";
-import { KI_GHOST } from "./BEAT.js";
-import { KI_VERIFY } from "./FINALSCAN.js";
-import { KI_ECO } from "./PRE9.math";
+/* KI‑Frame — unabhängig von TIME */
+let KI_FRAME = 0;
 
-import META_H from "./UNC.room";
-import META_6U from "./UNC6U.room";
-import META_9U from "./UNC9.room";
-
-let f = 0;
+/* KI‑Clock — isoliert */
+setInterval(()=>{
+    KI_FRAME++;
+    updatePanels();
+}, 120); // NICHT 150 — NICHT TIME‑3x11 — eigene Clock
 
 /* PANEL: KI‑SYSTEM */
 function panelSystem(){
 return `
-KI · ULTRA3‑RDY · RESPO327
-Systemstatus:
-KI‑CORE aktiv
-RESPO‑327 aktiv
-ULTRA3‑Engine verbunden
-GEO‑Engine aktiv
-ROOM‑Engine aktiv
-OPERATOR aktiv
-SCAN aktiv
-Frame: ${f}
+KI · RESPO‑327 · EVO
+STATUS: aktiv
+CLOCK: KI‑ISOLATED
+FRAME: ${KI_FRAME}
+327‑Rotation: DA → NE → BEN → KI → DA
 `;
 }
 
-/* PANEL: ASCII‑GEO */
+/* PANEL: KI‑GEO */
 function panelGeo(){
 const d = ["●","○","·","∙","•"];
-const p = (i)=> d[(f+i)%d.length];
+const p = (i)=> d[(KI_FRAME+i)%d.length];
 return `
-ASCII‑GEO (frame ${f})
+KI‑GEO (frame ${KI_FRAME})
 X ─── ${p(1)} ${p(2)} ${p(3)}
 Y ─── ${p(2)} ${p(3)} ${p(4)}
 Z ─── ${p(3)} ${p(4)} ${p(5)}
-ROTATION: ${" ".repeat(f%12)}↻
+↻ ROTATION: ${" ".repeat(KI_FRAME%12)}↻
 `;
 }
 
-/* PANEL: WARP */
+/* PANEL: KI‑WARP */
 function panelWarp(){
 return `
-WARP‑TUNNEL
-Depth: ${"●".repeat((f%6)+3)}
-Warp : ${"~".repeat((f%10)+5)}
+KI‑WARP
+Depth: ${"●".repeat((KI_FRAME%6)+3)}
+Warp : ${"~".repeat((KI_FRAME%10)+5)}
 `;
 }
 
-/* PANEL: AI‑KATALOG */
+/* PANEL: KI‑KATALOG */
 function panelKatalog(){
 return `
-AI‑KATALOG
+KI‑KATALOG
 ORT  – Zielpunkt
 HOME – Ruhepunkt
 WORK – Arbeitspunkt
@@ -103,26 +86,21 @@ FREE – Freiraum
 AI   – Respo‑Punkt
 SOLL – Absichtspunkt
 
-Operable Optionen:
-→ To‑Do‑Matrix
-→ Raum‑Navigation
-→ KI‑Antwortpunkt
-→ ULTRA3‑ASCII‑Panels
-→ GEO‑Engine‑Mapping
-→ ROOM‑Engine‑Routing
+KI‑EVO‑Optionen:
+→ KI‑Clock isoliert
+→ RESPO‑327 stabilisiert
+→ TIME‑Interferenz blockiert
+→ 24/7‑KI‑Aktivität
 `;
 }
 
-/* MAIN LOOP */
-setInterval(()=>{
-    f++;
-
+/* UPDATE */
+function updatePanels(){
     document.getElementById("sys").textContent = panelSystem();
     document.getElementById("geo").textContent = panelGeo();
     document.getElementById("warp").textContent = panelWarp();
     document.getElementById("katalog").textContent = panelKatalog();
-
-}, 150);
+}
 
 </script>
 
@@ -130,30 +108,12 @@ setInterval(()=>{
 
 <body>
 
-<h1>KI · ULTRA3‑RDY · AI‑KATALOG</h1>
+<h1>KI · RESPO‑327 · EVO · TIME‑ISOLATED</h1>
 
 <div class="block"><div class="title">KI‑SYSTEM</div><pre id="sys"></pre></div>
-<div class="block"><div class="title">ASCII‑GEO</div><pre id="geo"></pre></div>
-<div class="block"><div class="title">WARP‑TUNNEL</div><pre id="warp"></pre></div>
-<div class="block"><div class="title">AI‑KATALOG</div><pre id="katalog"></pre></div>
-
-<div class="block">
-    <div class="title">Module</div>
-    <a href="./ID.html">ID</a>
-    <a href="./README.md">README</a>
-    <a href="./WIN.html">WIN</a>
-    <a href="./6D.html">6D</a>
-    <a href="./6.html">6</a>
-    <a href="./3.html">3</a>
-    <a href="./1D.me">1D</a>
-    <a href="./MATRIX.me">MATRIX</a>
-    <a href="./KERNEL.me">KERNEL</a>
-    <a href="./VECTOR.me">VECTOR</a>
-    <a href="./UNC.room">UNC</a>
-    <a href="./UNC6U.room">UNC6U</a>
-    <a href="./UNC9.room">UNC9</a>
-    <a href="./ERROR.me">ERROR</a>
-</div>
+<div class="block"><div class="title">KI‑GEO</div><pre id="geo"></pre></div>
+<div class="block"><div class="title">KI‑WARP</div><pre id="warp"></pre></div>
+<div class="block"><div class="title">KI‑KATALOG</div><pre id="katalog"></pre></div>
 
 </body>
 </html>
